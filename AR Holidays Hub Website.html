@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Holidays Hub (PVT) LTD | Your Journey, Our Priority</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emeraldDeep: '#08231C',
+                        emeraldMain: '#0F382C',
+                        emeraldLight: '#1A5235',
+                        goldAccent: '#D4AF37',
+                        goldLight: '#F3E5AB',
+                        goldDark: '#AA820A',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'plane-fly': 'planeFly 15s linear infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.4)' },
+                            '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.8)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        planeFly: {
+                            '0%': { transform: 'translateX(-100px) translateY(0px) rotate(15deg)', opacity: '0' },
+                            '10%': { opacity: '1' },
+                            '90%': { opacity: '1' },
+                            '100%': { transform: 'translateX(100vw) translateY(-150px) rotate(15deg)', opacity: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #08231C;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(15, 56, 44, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s ease;
+        }
+
+        .glass-card-hover:hover {
+            background: rgba(26, 82, 53, 0.7);
+            border-color: rgba(212, 175, 55, 0.6);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .glass-nav {
+            background: rgba(8, 35, 28, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #9A7B1C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #E6C250 0%, #D4AF37 50%, #9A7B1C 100%);
+        }
+
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #08231C;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1A5235;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-goldAccent selection:text-emeraldDeep">
+
+    <!-- Flying Plane Background Animation -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <i class="fa-solid fa-plane text-goldAccent/10 text-6xl absolute animate-plane-fly top-1/3 left-0"></i>
+    </div>
+
+    <!-- Floating Contact & WhatsApp Widgets -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="https://wa.me/923111153114?text=Hello%20AR%20Holidays%20Hub,%20I%20would%20like%20to%20inquire%20about%20your%20travel%20packages!" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-transform duration-300 animate-pulse-glow border-2 border-goldAccent/50 group" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp group-hover:rotate-12 transition-transform"></i>
+        </a>
+        <a href="tel:+923111153114" class="w-14 h-14 rounded-full gold-gradient-bg text-emeraldDeep flex items-center justify-center text-xl shadow-2xl hover:scale-110 transition-transform duration-300 border-2 border-white/40" title="Call Us Directly">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo Header -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Recreated SVG Brand Crest Logo -->
+                <div class="relative w-12 h-12 rounded-full gold-gradient-bg p-[2px] shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="w-full h-full bg-emeraldDeep rounded-full flex flex-col items-center justify-center p-1 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-emeraldMain/40 rounded-full"></div>
+                        <!-- Logo Icon -->
+                        <div class="z-10 text-goldAccent text-xs font-bold leading-none flex items-center gap-0.5">
+                            <i class="fa-solid fa-plane-departure text-[10px]"></i>
+                            <span>AR</span>
+                        </div>
+                        <div class="z-10 text-[6px] tracking-tighter text-white font-semibold uppercase mt-0.5">
+                            Holidays
+                        </div>
+                        <!-- Inner Ring -->
+                        <div class="absolute inset-1 border border-goldAccent/30 rounded-full pointer-events-none"></div>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-heading font-bold text-xl sm:text-2xl tracking-wide gold-gradient-text block leading-none">AR HOLIDAYS HUB</span>
+                    <span class="text-[10px] sm:text-xs text-gray-300 tracking-widest font-medium uppercase mt-0.5 block">(PVT) LTD • Licensed Travel Agent</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu Links -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-200">
+                <a href="#home" class="hover:text-goldAccent transition-colors">Home</a>
+                <a href="#destinations" class="hover:text-goldAccent transition-colors">Destinations</a>
+                <a href="#services" class="hover:text-goldAccent transition-colors">Services</a>
+                <a href="#calculator" class="hover:text-goldAccent transition-colors">Package Calculator</a>
+                <a href="#why-us" class="hover:text-goldAccent transition-colors">Why Us</a>
+                <a href="#testimonials" class="hover:text-goldAccent transition-colors">Reviews</a>
+            </div>
+
+            <!-- Header Action Button -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:+923111153114" class="text-xs gold-gradient-text font-bold flex items-center gap-2 border border-goldAccent/30 px-3 py-2 rounded-full glass-card hover:border-goldAccent transition">
+                    <i class="fa-solid fa-headset text-goldAccent"></i> +92 311 1153114
+                </a>
+                <a href="#search-section" class="gold-gradient-bg text-emeraldDeep font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-lg hover:brightness-110 transition-all hover:shadow-goldAccent/20">
+                    Book Now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-goldAccent text-2xl focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-goldAccent/20 px-6 py-6 flex flex-col gap-4 text-center">
+            <a href="#home" class="mobile-link text-gray-200 hover:text-goldAccent py-2 border-b border-white/5">Home</a>
+            <a href="#destinations" class="mobile-link text-gray-200 hover:text-goldAccent py-2 border-b border-white/5">Destinations</a>
+            <a href="#services" class="mobile-link text-gray-200 hover:text-goldAccent py-2 border-b border-white/5">Services</a>
+            <a href="#calculator" class="mobile-link text-gray-200 hover:text-goldAccent py-2 border-b border-white/5">Package Estimator</a>
+            <a href="#why-us" class="mobile-link text-gray-200 hover:text-goldAccent py-2 border-b border-white/5">Why Us</a>
+            <a href="#testimonials" class="mobile-link text-gray-200 hover:text-goldAccent py-2 border-b border-white/5">Reviews</a>
+            <a href="https://wa.me/923111153114" target="_blank" class="gold-gradient-bg text-emeraldDeep font-bold py-3 rounded-xl mt-2 block shadow-lg">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Contact on WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH PARTICLES -->
+    <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+        <!-- Particles Container -->
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+        <!-- Dynamic Luxury Background Image Overlay -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-emeraldDeep/80 via-emeraldDeep/95 to-emeraldDeep"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center pt-8">
+            
+            <!-- Licensed Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-goldAccent/40 mb-6 text-xs sm:text-sm font-semibold tracking-wider uppercase text-goldLight animate-float">
+                <i class="fa-solid fa-shield-halved text-goldAccent"></i>
+                <span>Govt. Licensed Travel Agency (PVT LTD)</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                Your Journey, <span class="gold-gradient-text italic">Our Priority</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-10">
+                Experience world-class luxury, seamless visa assistance, direct flight ticketing, and tailored holiday packages across the globe with Pakistan's most reliable travel partner.
+            </p>
+
+            <!-- Interactive Quick Search Bar Section -->
+            <div id="search-section" class="glass-card p-4 sm:p-6 rounded-2xl max-w-5xl mx-auto border border-goldAccent/30 shadow-2xl text-left">
+                <form id="search-form" onsubmit="handleSearch(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    
+                    <!-- Destination Input -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-goldAccent mb-1">
+                            <i class="fa-solid fa-location-dot mr-1"></i> Destination
+                        </label>
+                        <select id="search-dest" class="w-full bg-emeraldDeep/80 border border-goldAccent/30 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-goldAccent">
+                            <option value="Dubai, UAE">Dubai, UAE</option>
+                            <option value="Istanbul, Turkey">Istanbul, Turkey</option>
+                            <option value="Baku, Azerbaijan">Baku, Azerbaijan</option>
+                            <option value="Bali, Indonesia">Bali, Indonesia</option>
+                            <option value="Hunza, Pakistan">Hunza & Skardu, PK</option>
+                            <option value="Custom / Other">Other Location...</option>
+                        </select>
+                    </div>
+
+                    <!-- Travel Category -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-goldAccent mb-1">
+                            <i class="fa-solid fa-plane mr-1"></i> Service Needed
+                        </label>
+                        <select id="search-service" class="w-full bg-emeraldDeep/80 border border-goldAccent/30 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-goldAccent">
+                            <option value="Full Holiday Package">Full Holiday Package</option>
+                            <option value="Flight Ticketing Only">Flight Ticketing Only</option>
+                            <option value="Hotel Booking Only">Hotel Booking Only</option>
+                            <option value="Visa Assistance">Visa Assistance</option>
+                        </select>
+                    </div>
+
+                    <!-- Travel Date -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-goldAccent mb-1">
+                            <i class="fa-solid fa-calendar-days mr-1"></i> Travel Month
+                        </label>
+                        <input type="month" id="search-date" class="w-full bg-emeraldDeep/80 border border-goldAccent/30 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-goldAccent">
+                    </div>
+
+                    <!-- Search Button -->
+                    <div class="flex items-end">
+                        <button type="submit" class="w-full gold-gradient-bg text-emeraldDeep font-extrabold text-sm uppercase py-3 rounded-xl hover:brightness-110 transition shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i> Get Instant Quote
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-14">
+                <div class="glass-card p-4 rounded-xl text-center border-b-2 border-goldAccent">
+                    <span class="text-3xl font-extrabold gold-gradient-text block">100%</span>
+                    <span class="text-xs text-gray-300 font-medium uppercase tracking-wider">Reliable Service</span>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center border-b-2 border-goldAccent">
+                    <span class="text-3xl font-extrabold gold-gradient-text block">50+</span>
+                    <span class="text-xs text-gray-300 font-medium uppercase tracking-wider">Global Destinations</span>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center border-b-2 border-goldAccent">
+                    <span class="text-3xl font-extrabold gold-gradient-text block">24/7</span>
+                    <span class="text-xs text-gray-300 font-medium uppercase tracking-wider">Client Support</span>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center border-b-2 border-goldAccent">
+                    <span class="text-3xl font-extrabold gold-gradient-text block">5.0 ★</span>
+                    <span class="text-xs text-gray-300 font-medium uppercase tracking-wider">Client Satisfaction</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TOP DESTINATIONS CAROUSEL/GRID SECTION -->
+    <section id="destinations" class="py-20 relative z-10 bg-gradient-to-b from-emeraldDeep via-emeraldMain/40 to-emeraldDeep">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-goldAccent block mb-2">Handpicked Luxury Tours</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">Popular Destinations</h2>
+                <div class="w-24 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterDestinations('all')" class="dest-filter-btn px-5 py-2 rounded-full text-xs font-bold tracking-wider uppercase glass-card border border-goldAccent text-goldAccent active-filter">All Packages</button>
+                <button onclick="filterDestinations('international')" class="dest-filter-btn px-5 py-2 rounded-full text-xs font-bold tracking-wider uppercase glass-card text-gray-300 hover:text-goldAccent">International</button>
+                <button onclick="filterDestinations('domestic')" class="dest-filter-btn px-5 py-2 rounded-full text-xs font-bold tracking-wider uppercase glass-card text-gray-300 hover:text-goldAccent">Pakistan Tours</button>
+                <button onclick="filterDestinations('honeymoon')" class="dest-filter-btn px-5 py-2 rounded-full text-xs font-bold tracking-wider uppercase glass-card text-gray-300 hover:text-goldAccent">Honeymoon Specials</button>
+            </div>
+
+            <!-- Destination Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="destination-grid">
+                
+                <!-- Card 1: Dubai -->
+                <div class="dest-card glass-card rounded-2xl overflow-hidden glass-card-hover border border-goldAccent/20 flex flex-col" data-category="international honeymoon">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-emeraldDeep/80 backdrop-blur-md px-3 py-1 rounded-full border border-goldAccent/40 text-xs font-bold text-goldAccent">
+                            5 Days / 4 Nights
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-emeraldDeep/90 px-3 py-1 rounded-lg border border-white/10 text-xs text-yellow-400 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.9 (120+ Reviews)
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl font-bold text-white">Dubai Glamour Escape</h3>
+                            </div>
+                            <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                                Includes 4-Star Luxury Hotel, Desert Safari with BBQ Dinner, Burj Khalifa Tour, Marina Cruise & Visa Assistance.
+                            </p>
+                            <ul class="text-xs text-gray-400 space-y-1 mb-6">
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Daily Buffet Breakfast</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Airport Transfers Included</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Guided City Tour</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase block">Starting From</span>
+                                <span class="text-lg font-extrabold text-goldAccent">PKR 185,000</span>
+                            </div>
+                            <button onclick="openModal('Dubai Glamour Escape', 'PKR 185,000')" class="gold-gradient-bg text-emeraldDeep text-xs font-bold uppercase px-4 py-2.5 rounded-xl hover:brightness-110 transition shadow-md">
+                                View Itinerary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Turkey -->
+                <div class="dest-card glass-card rounded-2xl overflow-hidden glass-card-hover border border-goldAccent/20 flex flex-col" data-category="international honeymoon">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80" alt="Turkey" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-emeraldDeep/80 backdrop-blur-md px-3 py-1 rounded-full border border-goldAccent/40 text-xs font-bold text-goldAccent">
+                            7 Days / 6 Nights
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-emeraldDeep/90 px-3 py-1 rounded-lg border border-white/10 text-xs text-yellow-400 font-bold">
+                            <i class="fa-solid fa-star"></i> 5.0 (95+ Reviews)
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl font-bold text-white">Magical Turkey Tour</h3>
+                            </div>
+                            <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                                Istanbul & Cappadocia magic with Hot Air Balloon experience, Bosphorus Cruise, Hagia Sophia & Cave Hotel Stay.
+                            </p>
+                            <ul class="text-xs text-gray-400 space-y-1 mb-6">
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Domestic Flights Included</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Luxury Cave Hotel</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Sticker Visa Processing</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase block">Starting From</span>
+                                <span class="text-lg font-extrabold text-goldAccent">PKR 295,000</span>
+                            </div>
+                            <button onclick="openModal('Magical Turkey Tour', 'PKR 295,000')" class="gold-gradient-bg text-emeraldDeep text-xs font-bold uppercase px-4 py-2.5 rounded-xl hover:brightness-110 transition shadow-md">
+                                View Itinerary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Baku, Azerbaijan -->
+                <div class="dest-card glass-card rounded-2xl overflow-hidden glass-card-hover border border-goldAccent/20 flex flex-col" data-category="international">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=800&q=80" alt="Baku" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-emeraldDeep/80 backdrop-blur-md px-3 py-1 rounded-full border border-goldAccent/40 text-xs font-bold text-goldAccent">
+                            5 Days / 4 Nights
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-emeraldDeep/90 px-3 py-1 rounded-lg border border-white/10 text-xs text-yellow-400 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.8 (80+ Reviews)
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl font-bold text-white">Baku & Shahdag Delight</h3>
+                            </div>
+                            <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                                Experience European charm in Asia! Fire Temple, Flame Towers, Shahdag Mountain Resort & Old City Tours.
+                            </p>
+                            <ul class="text-xs text-gray-400 space-y-1 mb-6">
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>E-Visa Processing (Fast Track)</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>4-Star Hotel in City Center</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Private SUV Transfers</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase block">Starting From</span>
+                                <span class="text-lg font-extrabold text-goldAccent">PKR 145,000</span>
+                            </div>
+                            <button onclick="openModal('Baku & Shahdag Delight', 'PKR 145,000')" class="gold-gradient-bg text-emeraldDeep text-xs font-bold uppercase px-4 py-2.5 rounded-xl hover:brightness-110 transition shadow-md">
+                                View Itinerary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Skardu & Hunza -->
+                <div class="dest-card glass-card rounded-2xl overflow-hidden glass-card-hover border border-goldAccent/20 flex flex-col" data-category="domestic honeymoon">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=800&q=80" alt="Hunza Pakistan" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-emeraldDeep/80 backdrop-blur-md px-3 py-1 rounded-full border border-goldAccent/40 text-xs font-bold text-goldAccent">
+                            7 Days / 6 Nights
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-emeraldDeep/90 px-3 py-1 rounded-lg border border-white/10 text-xs text-yellow-400 font-bold">
+                            <i class="fa-solid fa-star"></i> 5.0 (200+ Reviews)
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl font-bold text-white">Hunza & Skardu Paradise</h3>
+                            </div>
+                            <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                                Explore Shangrila Lake, Attabad Lake, Khunjerab Pass (China Border), and Altit/Baltit Forts in pure luxury.
+                            </p>
+                            <ul class="text-xs text-gray-400 space-y-1 mb-6">
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Prado 4x4 Vehicle Included</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Luxury Resort Accommodations</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Bonfire & Cultural Nights</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase block">Starting From</span>
+                                <span class="text-lg font-extrabold text-goldAccent">PKR 125,000</span>
+                            </div>
+                            <button onclick="openModal('Hunza & Skardu Paradise', 'PKR 125,000')" class="gold-gradient-bg text-emeraldDeep text-xs font-bold uppercase px-4 py-2.5 rounded-xl hover:brightness-110 transition shadow-md">
+                                View Itinerary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Bali Indonesia -->
+                <div class="dest-card glass-card rounded-2xl overflow-hidden glass-card-hover border border-goldAccent/20 flex flex-col" data-category="international honeymoon">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-emeraldDeep/80 backdrop-blur-md px-3 py-1 rounded-full border border-goldAccent/40 text-xs font-bold text-goldAccent">
+                            6 Days / 5 Nights
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-emeraldDeep/90 px-3 py-1 rounded-lg border border-white/10 text-xs text-yellow-400 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.9 (110+ Reviews)
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl font-bold text-white">Exotic Bali Island Getaway</h3>
+                            </div>
+                            <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                                Private Pool Villa in Ubud, Nusa Penida Island Tour, Bali Swing, Water Sports at Tanjung Benoa & Sunset Dinner.
+                            </p>
+                            <ul class="text-xs text-gray-400 space-y-1 mb-6">
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Private Villa with Swimming Pool</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Nusa Penida Speedboat Transfer</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Floating Breakfast Experience</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase block">Starting From</span>
+                                <span class="text-lg font-extrabold text-goldAccent">PKR 210,000</span>
+                            </div>
+                            <button onclick="openModal('Exotic Bali Island Getaway', 'PKR 210,000')" class="gold-gradient-bg text-emeraldDeep text-xs font-bold uppercase px-4 py-2.5 rounded-xl hover:brightness-110 transition shadow-md">
+                                View Itinerary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Umrah Package -->
+                <div class="dest-card glass-card rounded-2xl overflow-hidden glass-card-hover border border-goldAccent/20 flex flex-col" data-category="international">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80" alt="Makkah" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-emeraldDeep/80 backdrop-blur-md px-3 py-1 rounded-full border border-goldAccent/40 text-xs font-bold text-goldAccent">
+                            15 Days
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-emeraldDeep/90 px-3 py-1 rounded-lg border border-white/10 text-xs text-yellow-400 font-bold">
+                            <i class="fa-solid fa-star"></i> 5.0 (300+ Reviews)
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-heading text-2xl font-bold text-white">Executive Umrah Package</h3>
+                            </div>
+                            <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                                Premium 4-Star / 5-Star Hotel Accommodations near Haram in Makkah & Madinah with complete transport & visa.
+                            </p>
+                            <ul class="text-xs text-gray-400 space-y-1 mb-6">
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Hotels within Walking Distance</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Complete Ziyarat Included</li>
+                                <li><i class="fa-solid fa-check text-goldAccent mr-2"></i>Umrah Visa & Ground Support</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase block">Starting From</span>
+                                <span class="text-lg font-extrabold text-goldAccent">PKR 265,000</span>
+                            </div>
+                            <button onclick="openModal('Executive Umrah Package', 'PKR 265,000')" class="gold-gradient-bg text-emeraldDeep text-xs font-bold uppercase px-4 py-2.5 rounded-xl hover:brightness-110 transition shadow-md">
+                                View Itinerary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES SECTION -->
+    <section id="services" class="py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-goldAccent block mb-2">What We Offer</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">Our Premium Services</h2>
+                <div class="w-24 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-2xl border border-goldAccent/20 hover:border-goldAccent/60 transition-all text-center group">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient-bg text-emeraldDeep text-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-6 transition-transform shadow-lg">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white mb-3">Flight Ticketing</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Best fares on international and domestic flights with major airlines worldwide. Instant confirmation and flexible dates.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-2xl border border-goldAccent/20 hover:border-goldAccent/60 transition-all text-center group">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient-bg text-emeraldDeep text-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-6 transition-transform shadow-lg">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white mb-3">Hotel Bookings</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Handpicked 3-star, 4-star, and luxury 5-star resort accommodations worldwide with exclusive corporate discounts.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-2xl border border-goldAccent/20 hover:border-goldAccent/60 transition-all text-center group">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient-bg text-emeraldDeep text-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-6 transition-transform shadow-lg">
+                        <i class="fa-solid fa-passport"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white mb-3">Visa Assistance</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Hassle-free visa documentation support for UAE, Turkey, Azerbaijan, Malaysia, Thailand, Schengen, and more.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-8 rounded-2xl border border-goldAccent/20 hover:border-goldAccent/60 transition-all text-center group">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient-bg text-emeraldDeep text-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-6 transition-transform shadow-lg">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white mb-3">Holiday Packages</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Fully customized family, honeymoon, corporate, and group holiday packages designed around your exact budget and choices.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PACKAGE PRICE CALCULATOR -->
+    <section id="calculator" class="py-20 relative z-10 bg-emeraldMain/30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-goldAccent/30 shadow-2xl">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold uppercase tracking-widest text-goldAccent block mb-2">Instant Estimation</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Custom Package Estimator</h2>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Calculate estimated tour cost for your customized trip in real-time!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Controls -->
+                    <div class="space-y-6">
+                        
+                        <!-- Destination Selection -->
+                        <div>
+                            <label class="block text-xs font-bold text-goldAccent uppercase mb-2">1. Select Destination</label>
+                            <select id="calc-dest" onchange="calculatePrice()" class="w-full bg-emeraldDeep border border-goldAccent/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none">
+                                <option value="120000">Dubai (Base PKR 120,000/person)</option>
+                                <option value="180000">Turkey (Base PKR 180,000/person)</option>
+                                <option value="95000">Baku (Base PKR 95,000/person)</option>
+                                <option value="140000">Bali (Base PKR 140,000/person)</option>
+                                <option value="75000">Northern Pakistan (Base PKR 75,000/person)</option>
+                            </select>
+                        </div>
+
+                        <!-- Number of Travelers Slider -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs font-bold text-goldAccent uppercase">2. Number of Travelers</label>
+                                <span id="travelers-val" class="text-sm font-bold text-white">2 Persons</span>
+                            </div>
+                            <input type="range" id="calc-travelers" min="1" max="10" value="2" oninput="calculatePrice()" class="w-full accent-goldAccent">
+                        </div>
+
+                        <!-- Hotel Quality Tier -->
+                        <div>
+                            <label class="block text-xs font-bold text-goldAccent uppercase mb-2">3. Accommodation Tier</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" onclick="setTier(1, this)" class="tier-btn bg-emeraldDeep border border-goldAccent/40 py-2.5 rounded-xl text-xs font-bold text-white active-tier border-goldAccent">3-Star</button>
+                                <button type="button" onclick="setTier(1.3, this)" class="tier-btn bg-emeraldDeep border border-goldAccent/20 py-2.5 rounded-xl text-xs font-bold text-gray-300">4-Star</button>
+                                <button type="button" onclick="setTier(1.7, this)" class="tier-btn bg-emeraldDeep border border-goldAccent/20 py-2.5 rounded-xl text-xs font-bold text-gray-300">5-Star Luxury</button>
+                            </div>
+                        </div>
+
+                        <!-- Add-ons -->
+                        <div>
+                            <label class="block text-xs font-bold text-goldAccent uppercase mb-2">4. Add-ons</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 text-xs text-gray-300 cursor-pointer">
+                                    <input type="checkbox" id="addon-visa" checked onchange="calculatePrice()" class="accent-goldAccent rounded"> Express Visa Processing (+PKR 25,000/person)
+                                </label>
+                                <label class="flex items-center gap-2 text-xs text-gray-300 cursor-pointer">
+                                    <input type="checkbox" id="addon-guided" onchange="calculatePrice()" class="accent-goldAccent rounded"> Private Tour Guide & SUV (+PKR 35,000 total)
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Calculated Total Box -->
+                    <div class="glass-card p-8 rounded-2xl border-2 border-goldAccent/50 text-center flex flex-col justify-between h-full">
+                        <div>
+                            <span class="text-xs uppercase font-bold text-gray-400 tracking-wider block mb-2">Estimated Package Total</span>
+                            <div id="total-price" class="font-heading text-4xl sm:text-5xl font-extrabold gold-gradient-text my-4">
+                                PKR 290,000
+                            </div>
+                            <p class="text-[11px] text-gray-400">
+                                *Note: Prices are estimates based on standard season. Final price may vary according to flight ticket availability.
+                            </p>
+                        </div>
+
+                        <div class="mt-8">
+                            <button onclick="bookCalculatedPackage()" class="w-full gold-gradient-bg text-emeraldDeep font-extrabold text-sm uppercase py-3.5 rounded-xl hover:brightness-110 transition shadow-lg flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Lock This Price via WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="why-us" class="py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-goldAccent block mb-2">Unmatched Excellence</span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white mb-6">Why Travel With AR Holidays Hub?</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8">
+                        At AR Holidays Hub (PVT) LTD, we understand that travel is not just about visiting places—it's about creating memories that last a lifetime. As a licensed, government-approved travel management company, we provide end-to-end transparency and VIP handling.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 glass-card p-4 rounded-xl border border-goldAccent/20">
+                            <div class="w-10 h-10 rounded-full gold-gradient-bg text-emeraldDeep flex items-center justify-center text-lg font-bold shrink-0">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Government Licensed Agent</h4>
+                                <p class="text-xs text-gray-300">Fully registered Private Limited agency ensuring 100% financial security for your trip bookings.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 glass-card p-4 rounded-xl border border-goldAccent/20">
+                            <div class="w-10 h-10 rounded-full gold-gradient-bg text-emeraldDeep flex items-center justify-center text-lg font-bold shrink-0">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Best Price Guarantee</h4>
+                                <p class="text-xs text-gray-300">Direct airline ticketing and hotel contracting guarantees unbeatable package rates.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 glass-card p-4 rounded-xl border border-goldAccent/20">
+                            <div class="w-10 h-10 rounded-full gold-gradient-bg text-emeraldDeep flex items-center justify-center text-lg font-bold shrink-0">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">24/7 Dedicated Trip Manager</h4>
+                                <p class="text-xs text-gray-300">Continuous support from immigration assistance to hotel check-ins throughout your journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Visual Banner -->
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden border-2 border-goldAccent/40 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80" alt="Travel Agency Luxury Flight" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emeraldDeep via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-2xl border border-goldAccent/30">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full gold-gradient-bg text-emeraldDeep font-extrabold flex items-center justify-center text-xl">
+                                    AR
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Always Reliable & Trusted</h4>
+                                    <p class="text-xs text-goldAccent">Call: +92 311 1153114</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 relative z-10 bg-emeraldMain/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-goldAccent block mb-2">Client Reviews</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">What Travelers Say About Us</h2>
+                <div class="w-24 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-goldAccent/20 flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-gray-300 italic leading-relaxed mb-6">
+                            "AR Holidays Hub arranged our Baku trip perfectly! From e-visa approval within 2 days to 4-star city center hotel, everything was top-notch. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg text-emeraldDeep font-bold flex items-center justify-center">
+                            MA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Muhammad Ali</h4>
+                            <span class="text-[10px] text-gray-400">Traveled to Baku</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-goldAccent/20 flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-gray-300 italic leading-relaxed mb-6">
+                            "Booked our honeymoon Dubai package with them. Smooth airport transfers, desert safari, and incredible hotel view. Their team was constantly in touch on WhatsApp!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg text-emeraldDeep font-bold flex items-center justify-center">
+                            SA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Shahid & Ayesha</h4>
+                            <span class="text-[10px] text-gray-400">Traveled to Dubai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-6 rounded-2xl border border-goldAccent/20 flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-gray-300 italic leading-relaxed mb-6">
+                            "Best flight ticketing rates in Pakistan! I searched everywhere online, but AR Holidays Hub gave me direct airline discount ticket for Turkey. Outstanding service!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg text-emeraldDeep font-bold flex items-center justify-center">
+                            ZK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Zubair Khan</h4>
+                            <span class="text-[10px] text-gray-400">Flight Booking</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-emeraldDeep border-t border-goldAccent/30 pt-16 pb-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <!-- Logo -->
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg p-[2px]">
+                            <div class="w-full h-full bg-emeraldDeep rounded-full flex flex-col items-center justify-center text-goldAccent font-bold text-xs">
+                                AR
+                            </div>
+                        </div>
+                        <div>
+                            <span class="font-heading font-bold text-lg gold-gradient-text block leading-none">AR HOLIDAYS HUB</span>
+                            <span class="text-[9px] text-gray-400 uppercase tracking-widest block">(PVT) LTD</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Your Journey, Our Priority. Government licensed agency providing custom holiday packages, Umrah services, flights, and hotel bookings worldwide.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://tiktok.com/@ar.holidays.hub.pv" target="_blank" class="w-9 h-9 rounded-full glass-card border border-goldAccent/30 flex items-center justify-center text-goldAccent hover:bg-goldAccent hover:text-emeraldDeep transition">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/923111153114" target="_blank" class="w-9 h-9 rounded-full glass-card border border-goldAccent/30 flex items-center justify-center text-goldAccent hover:bg-goldAccent hover:text-emeraldDeep transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full glass-card border border-goldAccent/30 flex items-center justify-center text-goldAccent hover:bg-goldAccent hover:text-emeraldDeep transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading text-white font-bold text-base mb-4 border-b border-goldAccent/30 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#home" class="hover:text-goldAccent transition">Home</a></li>
+                        <li><a href="#destinations" class="hover:text-goldAccent transition">Tour Destinations</a></li>
+                        <li><a href="#services" class="hover:text-goldAccent transition">Our Services</a></li>
+                        <li><a href="#calculator" class="hover:text-goldAccent transition">Cost Estimator</a></li>
+                        <li><a href="#testimonials" class="hover:text-goldAccent transition">Client Reviews</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services List -->
+                <div>
+                    <h4 class="font-heading text-white font-bold text-base mb-4 border-b border-goldAccent/30 pb-2 inline-block">Services</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#search-section" class="hover:text-goldAccent transition">Worldwide Flight Ticketing</a></li>
+                        <li><a href="#search-section" class="hover:text-goldAccent transition">International Hotel Booking</a></li>
+                        <li><a href="#search-section" class="hover:text-goldAccent transition">Fast Track Visa Processing</a></li>
+                        <li><a href="#search-section" class="hover:text-goldAccent transition">Executive Umrah Packages</a></li>
+                        <li><a href="#search-section" class="hover:text-goldAccent transition">Domestic Northern Tours</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading text-white font-bold text-base mb-4 border-b border-goldAccent/30 pb-2 inline-block">Direct Contact</h4>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-goldAccent text-sm"></i>
+                            <a href="tel:+923111153114" class="hover:text-goldAccent font-bold text-white">+92 311 1153114</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                            <a href="https://wa.me/923111153114" target="_blank" class="hover:text-goldAccent">+92 311 1153114</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-shield-halved text-goldAccent text-sm"></i>
+                            <span>Licensed Travel Agency (PVT LTD)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-globe text-goldAccent text-sm"></i>
+                            <span>@ar.holidays.hub.pv</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 text-center text-xs text-gray-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 AR Holidays Hub (PVT) LTD. All Rights Reserved.</p>
+                <p class="text-goldAccent">Designed for Luxury Travel Experiences</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE ITINERARY MODAL -->
+    <div id="itinerary-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-card max-w-xl w-full rounded-3xl p-6 border border-goldAccent/40 max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-goldAccent text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="text-[10px] font-bold uppercase tracking-widest text-goldAccent block mb-1">Package Details</span>
+            <h3 id="modal-title" class="font-heading text-2xl font-bold text-white mb-2">Package Name</h3>
+            <span id="modal-price" class="text-lg font-extrabold gold-gradient-text block mb-4">PKR 0</span>
+
+            <div class="space-y-4 text-xs text-gray-300 mb-6">
+                <div class="border-l-2 border-goldAccent pl-3 py-1">
+                    <strong class="text-white block">Day 1: Arrival & Private Transfer</strong>
+                    <span>Airport welcome, private SUV transfer to hotel, check-in & evening leisure.</span>
+                </div>
+                <div class="border-l-2 border-goldAccent pl-3 py-1">
+                    <strong class="text-white block">Day 2: City Exploration & Sightseeing</strong>
+                    <span>Guided city tour visiting major historical landmarks and shopping hubs.</span>
+                </div>
+                <div class="border-l-2 border-goldAccent pl-3 py-1">
+                    <strong class="text-white block">Day 3: Signature Attraction Tour</strong>
+                    <span>Special excursion inclusion (Desert Safari / Cave Hotel / Mountain Cruise).</span>
+                </div>
+                <div class="border-l-2 border-goldAccent pl-3 py-1">
+                    <strong class="text-white block">Day 4+: Return Journey</strong>
+                    <span>Breakfast at hotel, free time for shopping, and airport drop off.</span>
+                </div>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="bookModalPackage()" class="flex-1 gold-gradient-bg text-emeraldDeep font-extrabold text-xs uppercase py-3 rounded-xl hover:brightness-110 transition shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Book This Package Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Particles.js background
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.particlesJS) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 45, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#D4AF37" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.25, "random": true },
+                        "size": { "value": 3, "random": true },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#D4AF37",
+                            "opacity": 0.15,
+                            "width": 1
+                        },
+                        "move": { "enable": true, "speed": 1.5, "direction": "none", "out_mode": "out" }
+                    },
+                    "interactivity": {
+                        "events": { "onhover": { "enable": true, "mode": "grab" } }
+                    }
+                });
+            }
+
+            // Set current month in search input default
+            const dateInput = document.getElementById('search-date');
+            if (dateInput) {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                dateInput.value = `${year}-${month}`;
+            }
+
+            calculatePrice();
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Destination Filter Logic
+        function filterDestinations(category) {
+            const cards = document.querySelectorAll('.dest-card');
+            const btns = document.querySelectorAll('.dest-filter-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('border', 'border-goldAccent', 'text-goldAccent');
+                btn.classList.add('text-gray-300');
+            });
+
+            event.target.classList.add('border', 'border-goldAccent', 'text-goldAccent');
+            event.target.classList.remove('text-gray-300');
+
+            cards.forEach(card => {
+                const cats = card.getAttribute('data-category');
+                if (category === 'all' || cats.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Package Price Estimator Logic
+        let currentTier = 1;
+
+        function setTier(multiplier, btnElement) {
+            currentTier = multiplier;
+            document.querySelectorAll('.tier-btn').forEach(btn => {
+                btn.classList.remove('border-goldAccent', 'text-white');
+                btn.classList.add('text-gray-300');
+            });
+            btnElement.classList.add('border-goldAccent', 'text-white');
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            const basePrice = parseFloat(document.getElementById('calc-dest').value);
+            const travelers = parseInt(document.getElementById('calc-travelers').value);
+            document.getElementById('travelers-val').innerText = `${travelers} Person${travelers > 1 ? 's' : ''}`;
+
+            let total = basePrice * travelers * currentTier;
+
+            if (document.getElementById('addon-visa').checked) {
+                total += (25000 * travelers);
+            }
+            if (document.getElementById('addon-guided').checked) {
+                total += 35000;
+            }
+
+            document.getElementById('total-price').innerText = `PKR ${total.toLocaleString()}`;
+        }
+
+        function bookCalculatedPackage() {
+            const destSelect = document.getElementById('calc-dest');
+            const destText = destSelect.options[destSelect.selectedIndex].text.split('(')[0].trim();
+            const travelers = document.getElementById('travelers-val').innerText;
+            const price = document.getElementById('total-price').innerText;
+
+            const message = `Hello AR Holidays Hub! I would like to book a custom package query:%0A%0A- Destination: ${destText}%0A- Travelers: ${travelers}%0A- Estimated Total: ${price}%0A%0APlease provide details!`;
+            window.open(`https://wa.me/923111153114?text=${message}`, '_blank');
+        }
+
+        // Search Form Logic
+        function handleSearch(e) {
+            e.preventDefault();
+            const dest = document.getElementById('search-dest').value;
+            const service = document.getElementById('search-service').value;
+            const month = document.getElementById('search-date').value;
+
+            const message = `Hello AR Holidays Hub! I want to inquire about:%0A%0A- Service: ${service}%0A- Destination: ${dest}%0A- Travel Month: ${month}%0A%0APlease share available packages!`;
+            window.open(`https://wa.me/923111153114?text=${message}`, '_blank');
+        }
+
+        // Modal Logic
+        let selectedModalPackage = '';
+        let selectedModalPrice = '';
+
+        function openModal(packageName, price) {
+            selectedModalPackage = packageName;
+            selectedModalPrice = price;
+            document.getElementById('modal-title').innerText = packageName;
+            document.getElementById('modal-price').innerText = price;
+
+            const modal = document.getElementById('itinerary-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('itinerary-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function bookModalPackage() {
+            const message = `Hello AR Holidays Hub! I am interested in booking the *${selectedModalPackage}* package (${selectedModalPrice}). Please send complete itinerary and details!`;
+            window.open(`https://wa.me/923111153114?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
